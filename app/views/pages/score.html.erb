@@ -1,0 +1,32 @@
+<div class="s12">
+    <div class="card-panel teal lighten-2 center"><strong>Welcome to the longest word-game | <%= p session[:name]  %> </strong></div>
+  <!-- Tables form -->
+  <table class="centered striped">
+   <thead>
+     <tr>
+         <th data-field="id">Your word</th>
+         <th data-field="name">Translation</th>
+         <th data-field="number">Your Score</th>
+         <th data-field="name">Message</th>
+     </tr>
+   </thead>
+
+   <tbody>
+     <tr>
+       <td><%= @shot %></td>
+       <td><%= @result[:translation] %></td>
+       <td><%= @result[:score] %></td>
+       <td><%= @result[:message] %></td>
+     </tr>
+
+   </tbody>
+ </table>
+ <!-- Row for question -->
+ <div class="clear"></div>
+   <div class="row">
+     <%= link_to 'Back', 'game.html', class: 'btn waves-effect waves-light left blue' %>&nbsp;&nbsp;
+   </div>
+     <p> Your last results : <%= p session[:results].join(" ") %></p>
+   </div>
+  </div>
+</div>

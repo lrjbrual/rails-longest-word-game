@@ -1,0 +1,21 @@
+<div class="s12">
+    <div class="card-panel teal lighten-2 center"><strong>Welcome to the longest word-game</strong></div>
+    <div class="card-panel teal lighten-2 left"><strong>Here is your grid</strong><p><%= @grid.join(" ") %></p>
+<%= button_to "Refresh", "game.html", class: "btn waves-effect waves-light left orange", :method => :get %>
+    </div>
+
+ <!-- Row for question -->
+ <div class="row">
+   <form class="col s12" action="/score">
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="shot" name="shot" type="text" length="10">
+        <label for="shot" name="">What's your best shot?</label>
+        <input type="hidden" name="time" value="<%= @start_time %>">
+        <input type="hidden" name="grid" value="<%= @grid.join(" ")%>">
+        <button class="btn waves-effect waves-light left blue" type="submit" name="action">Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
